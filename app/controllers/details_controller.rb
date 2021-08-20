@@ -32,6 +32,13 @@ class DetailsController < ApplicationController
     @detail = Detail.find(params[:id])
     @detail.destroy
   end
+  
+  def random
+    ids = Animal.pluck(:id)
+    @random_animal = Animal.find(ids.sample)
+    @random_detail = @random_animal.details.sample
+    json_response(@random_detail)
+  end
 
   private
   def json_response(object, status = :ok)
