@@ -39,7 +39,7 @@ An animal shelter API that includes a list of animal types, the animals within t
 | <span style="color:red">Delete</span> | /animals/{animal_id}/details/{id} | _Deletes an animal's details_ |
 | <span style="color:blue">Get</span> | /animals/{animal_id}/details/{id} | _Fetches a single animal's details_ |
 | <span style="color:gold">Patch</span> | /animals/{animal_id}/details/{id} | _Updates a single animal's details_ |
-
+| <span style="color:blue">Get</span> | /random | _Fetches a random animal's details_ |
 ## Known Bugs
 * _No known bugs_
 
