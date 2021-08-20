@@ -1,3 +1,5 @@
 Rails.application.routes.draw do
-    resources :quotes
+  resources :animals do
+    resources :details
+  end
 end
