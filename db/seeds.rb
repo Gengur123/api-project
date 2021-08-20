@@ -19,10 +19,10 @@ class Seed
     animal_2 = Animal.create!(
       animal_type: "dog"
     )
-    5.times do |i|
+    10.times do |i|
       Detail.create!(name: Faker::Creature::Cat.name, breed: Faker::Creature::Cat.breed, gender: Faker::Gender.binary_type, age: Faker::Number.within(range: 1..20), weight: Faker::Measurement.weight, bio: Faker::TvShows::TwinPeaks.quote, animal_id: animal_1.id)
     end
-    5.times do |i|
+    10.times do |i|
       Detail.create!(name: Faker::Creature::Dog.name, breed: Faker::Creature::Dog.breed, gender: Faker::Gender.binary_type, age: Faker::Number.within(range: 1..20), weight: Faker::Measurement.weight, bio: Faker::TvShows::TwinPeaks.quote, animal_id: animal_2.id)
     end
   end
