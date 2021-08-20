@@ -1,52 +1,52 @@
+# Animal API
+
+#### By Arthur Lee
+
 ## Description
+An animal shelter API that includes a list of animal types, the animals within those types, and the details about each animal. A user can make API calls to get, create, update, and delete animal types as well as specific animals within those types.
 
-This is a basic scaffolded Rails API using Docker with Ruby 2.6.5, Rails 5.2.4, and Postgres 12.1. This project can be used in lieu of installing Ruby, Rails and Postgres on your machine when you are working with Rails APIs during week 6 of Epicodus. When you run `docker-compose up`, Docker will create two containers on your machine: a Ruby/Rails environment running the local server and a Postgres container where your database is stored.
+## Technologies Used
+* _Ruby_
+* _Postgres_
+* _Sinatra_
+* _Docker_
+* _Rspec_
+* _HTML_
+* _Visual Studio code_
 
-### Windows Users
 
-You will need to uncomment the following line in `Dockerfile` for the `entrypoint.sh` script to run correctly:
+## Setup/Installation Requirements
+* _Clone this repository_
+* _Open terminal and type `git clone [git link]`_
+* _Navigate to project directory using cd in terminal_
+* _Open project in text editor `code .`_
+* _Create a database by typing `bei rails db:create`_
+* _Type `bei rake db:migrate` to finish creating the database_
+* _Type `bei rake db:seed` to populate the database_
+* _To run tests, type `bei rspec` in terminal_
+* _To run the program, type `docker compose up --build` in terminal then navigate to a web browser and type `http://localhost:3000/`_
 
-```
-RUN sed -i -e 's/\r$//' /usr/bin/entrypoint.sh
-```
+## API
+ Action |  Route | Description
+| :--- | --- | ---: |
+| <span style="color:blue">Get</span> | /animals | _Fetches all animal types_ |
+| <span style="color:green">Post</span> | /animals | _Creates an animal type_ |
+| <span style="color:red">Delete</span> | /animals/{animal_id} | _Deletes an animal type_ |
+| <span style="color:blue">Get</span> | /animals/{animal_id} | _Fetches a single animal type_ |
+| <span style="color:gold">Patch</span> | /animals/{animal_id} | _Updates a single animal type_ |
+| <span style="color:blue">Get</span> | /animals/{animal_id}/details | _Fetches all animals of a specific animal type_ |
+| <span style="color:green">Post</span> | /animals/{animal_id}/details | _Creates an animal's details_     |
+| <span style="color:red">Delete</span> | /animals/{animal_id}/details/{id} | _Deletes an animal's details_ |
+| <span style="color:blue">Get</span> | /animals/{animal_id}/details/{id} | _Fetches a single animal's details_ |
+| <span style="color:gold">Patch</span> | /animals/{animal_id}/details/{id} | _Updates a single animal's details_ |
 
-This line switches the line ending format so it works correctly with Windows. (Note that if the line above is uncommented, the script won't run correctly with Mac machines.)
+## Known Bugs
+* _No known bugs_
 
-### Running Rails and Postgres Servers
+## License
 
-The included code has a single API endpoint at: `http://localhost:3000/quotes`. Once you create and migrate the database, you'll be able to access it.
+[MIT](https://en.wikipedia.org/wiki/MIT_License)
+Copyright (c) 2021 Arthur Lee
+## Contact Information
 
-* First run `docker-compose up` to build the project. Next, you'll need to add a database.
-
-### Running Shell Commands
-
-To access a shell environment to run `rails c`, run migrations, or run other `rake` and `rails` tasks such as `rails routes`, you'll need to do the following.
-
-Run the following command in the root directory of the project:
-
-```
-$ docker-compose run api sh
-```
-
-It's not necessary for the containers to be running (with `$ docker-compose up`). Note that the service name has been changed from `web` to `api`.
-
-This will open a shell where you can run any commands in the web application's environment. This includes the following commands:
-
-* `$ bundle exec rake db:create` (and any other Rake commands)
-* `$ rails routes` and `$ rails c` (as well as any other Rails commands)
-* `$ bundle exec rspec` (to run tests)
-* `$ irb` (if you just need a basic Ruby REPL)
-
-Once you create and migrate the database, you can go to `http://localhost:3000/quotes` in Postman or the browser to see the API's response.
-
-### What if I want to add more gems to my project?
-
-You'll need to complete the following steps:
-
-* First, add the gems to the project.
-
-* Run `docker-compose run web bundle install`. This will bundle the new gems.
-
-* Next, run `docker-compose up --build`. This will rebuild the project.
-
-To read Docker's documentation on running projects using Ruby and Rails, see [Quickstart: Compose and Rails](https://docs.docker.com/compose/rails/).
+_Arthur Lee [meleearthur@gmail.com](meleearthur@gmail.com)_
