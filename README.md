@@ -29,7 +29,7 @@ An animal shelter API that includes a list of animal types, the animals within t
 ## API
  Action |  Route | Description
 | :--- | --- | ---: |
-| <span style="color:blue">Get</span> | /animals | _Fetches all animal types_ |
+| <span style="color:blue">Get</span> | /animals| _Fetches all animal types_ |
 | <span style="color:green">Post</span> | /animals | _Creates an animal type_ |
 | <span style="color:red">Delete</span> | /animals/{animal_id} | _Deletes an animal type_ |
 | <span style="color:blue">Get</span> | /animals/{animal_id} | _Fetches a single animal type_ |
@@ -40,6 +40,56 @@ An animal shelter API that includes a list of animal types, the animals within t
 | <span style="color:blue">Get</span> | /animals/{animal_id}/details/{id} | _Fetches a single animal's details_ |
 | <span style="color:gold">Patch</span> | /animals/{animal_id}/details/{id} | _Updates a single animal's details_ |
 | <span style="color:blue">Get</span> | /random | _Fetches a random animal's details_ |
+
+## Examples Of API calls
+GET ```http://localhost:3000/animals```
+```
+{
+[{"id":1,"animal_type":"cat"},
+{"id":2,"animal_type":"dog"},
+{"id":3,"animal_type":"cat"},
+{"id":4,"animal_type":"dog"},
+{"id":5,"animal_type":"cat"},
+{"id":6,"animal_type":"dog"},
+{"id":7,"animal_type":"cat"},
+{"id":8,"animal_type":"dog"}]
+}
+```
+GET: ```http://localhost:3000/animals/1```
+```
+{
+[{"id":1,"animal_type":"cat"},
+}
+```
+
+GET: ```http://localhost:3000/animals/1/details/1```
+
+```
+{
+"id":1,
+"name":"Milo",
+"breed":"Ukrainian Levkoy",
+"gender":"Female","
+"age":2, "
+"weight":5,"
+bio":"Crazy Cute","animal_id":1
+}
+```
+POST ```http://localhost:3000/details``` 
+
+Will post a new detail. You can add the animal and content by clicking on "Body" in Postman just below the URL and passing in key-value pairs.
+
+PUT ```http://localhost:3000/detailss/:id```
+
+will update a detail. Just as with the POST call, you'll pass in the parameters you want to update in the body by using key-value pairs.
+
+DELETE ```http://localhost:3000/quotes/:id```
+
+will delete a detail with the corresponding :id.
+
+
+You can confirm that your POST, PUT and DELETE methods are working by checking the corresponding records in the Rails console. Note that you'll get a 404 - Not Found error if you try to retrieve an :id that doesn't exist.
+
 ## Known Bugs
 * _No known bugs_
 

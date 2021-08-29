@@ -20,7 +20,11 @@ class DetailsController < ApplicationController
 
   def create
     @detail = Detail.create(detail_params)
-    json_response(@detail)
+    if @detail.update!(detail_params)
+      render status: 200, json: {
+        message: "This detail has been updated successfully."
+        }
+    end
   end
 
   def update
